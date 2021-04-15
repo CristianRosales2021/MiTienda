@@ -1,0 +1,64 @@
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 1</title>
+<link href="styles.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+function valida(){
+	var nombre = document.getElementById("datos-personales-nombre").value;
+	var pass = document.getElementById("pass").value;
+	var estado = true;
+	document.getElementById("spanNombre").innerHTML = "El campo es obligatorio"; 
+	
+	if(nombre == ""){
+		document.getElementById("datos-personales-nombre").className = "cColorRojo";
+	} else{
+		
+		document.getElementById("datos-personales-nombre").className = "campo-form";
+	}
+	
+	document.getElementById("spanPass").innerHTML = "El campo es obligatorio"; 
+	if(pass == ""){
+            document.getElementById("pass").className = "cColorRojo";
+        }
+		else{
+		
+		document.getElementById("pass").className = "campo-form";
+	}
+
+    if((nombre == "alumno") && (pass == "Beltran")){
+    alert("Acceso Autorizado");
+	estado = true;
+    } 
+   else{
+    alert("El nombre de usuario y/o la contraseña no son correctos");
+	estado = false;
+    }
+	
+return estado;
+}
+
+
+	
+
+</script>
+</head>
+<body>
+<form id="form1" name="form1" method="post" action="" onsubmit="return valida()">
+	<div><fieldset class="form-consulta">
+<legend><span class="btn-form">Login</span></legend><div class="form-consulta">
+	<div  class="form-consulta">
+<label for="datos-personales-nombre">Nombre de Usuario: <span id="spanNombre" class="campo-form">*</span></label>
+	<input type="text" id="datos-personales-nombre" name="[datos_personales][nombre]" value="" size="60" maxlength="128" class="campo-form"/>
+	<div  class="form-consulta">
+<label>Contraseña: <span id="spanPass" class="campo-form">*</span>
+	<input type="password" name="pass" id="pass" placeholder="*******" class="campo-form">
+</div>
+<br>
+<input type="submit" value="Iniciar Sesión" class="btn-form"/>
+<input type="reset" value="Borrar Datos" class="btn-form"/>
+</form>
+</body>
+
+</html>
