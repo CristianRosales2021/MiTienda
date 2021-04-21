@@ -19,11 +19,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-
-    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
 
 
 </head>
@@ -34,18 +32,11 @@
             var nombre = document.getElementById("datos-personales-nombre").value;
             var pass = document.getElementById("pass").value;
             var estado = true;
-            document.getElementById("spanNombre").innerHTML = "El campo es obligatorio";
-            if (nombre == "") {
-                document.getElementById("datos-personales-nombre").className = "cColorRojo";
-            } else {
-                document.getElementById("datos-personales-nombre").className = "campo-form";
+            if ((nombre == "") || (pass == "")) {
+                alert("El nombre de usuario y / o la contraseña no son correctos ");
+                estado = false;
             }
-            document.getElementById("spanPass").innerHTML = "El campo es obligatorio";
-            if (pass == "") {
-                document.getElementById("pass").className = "cColorRojo";
-            } else {
-                document.getElementById("pass").className = "campo-form";
-            }
+
             if ((nombre == "alumno") && (pass == "Beltran")) {
                 alert("Acceso Autorizado");
                 estado = true;
@@ -74,9 +65,10 @@
             </div>
             <div class="col-md-12">
                 <ul class="social-network social-circle">
-                    <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#" class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li>
+                    <li><a href='https://www.facebook.com/' href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href='https://twitter.com/login' href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href='https://accounts.google.com/signin/v2/identifier?service=accountsettings&passive=1209600&osid=1&continue=https%3A%2F%2Fmyaccount.google.com%2Fintro%2Fprofile&followup=https%3A%2F%2Fmyaccount.google.com%2Fintro%2Fprofile&ec=GAZAwAE&flowName=GlifWebSignIn&flowEntry=ServiceLogin'
+                            href="#" class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li>
                 </ul>
             </div>
         </div>
